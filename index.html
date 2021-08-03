@@ -12,8 +12,8 @@
     <div class="appContainer" style="visibility:hidden;">
         <div class="topBar">
             <div>
-                    <a href="" class = "logoLink"><img src="img/logo.svg" alt="logo"class = "logo"></a>
-                    <a href="" class="userLink"><p class="username">UserName</p> <img src="img/user.svg" alt="user"class = "account"></a>
+                    <a href="" class = "logoLink"><img src="/img/logo.svg" alt="logo"class = "logo"></a>
+                    <a href="" class="userLink"><p class="username">UserName</p> <img src="/img/user.svg" alt="user"class = "account"></a>
             </div>
         </div>
         <div class="appBody">
@@ -92,7 +92,8 @@
 
     <!-- CHOOSE TASK TYPE__________________________________________ -->
     <!-- Visibility задается напрямую, потому что если задавать через класс, то элемент прячеться не сразу при подгрузке html и вылезает косяк -->
-    <div class="taskTypeDialog" style="visibility:hidden;"> 
+    <div class="taskTypeDialog" style="visibility:hidden;">
+        <button class="taskTypeMenuClose borderedBtn">Назад</button>
         <!-- showSideTaskMenu -->
             <div class="addTasktypeContainer">
                 <input type="text" class="addTasktypeInput" placeholder="Добавить новую категорию">
@@ -103,7 +104,7 @@
             <ul class="taskTypeList">
                 
             </ul>
-           <button class="taskTypeMenuClose borderedBtn">Назад</button>
+           
     </div>
      <!-- __________________________________________ -->   
     <script src="dist/bundle.js"></script>
