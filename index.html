@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+</head>
+<body>
+   
+    <div class="appContainer" style="visibility:hidden;">
+        <div class="topBar">
+            <div>
+                    <a href="" class = "logoLink"><img src="img/logo.svg" alt="logo"class = "logo"></a>
+                    <a href="" class="userLink"><p class="username">UserName</p> <img src="img/user.svg" alt="user"class = "account"></a>
+            </div>
+        </div>
+        <div class="appBody">
+            <div class="todo">
+                <p class="todoTitle">TODO</p>
+                <div class="todoList">
+                    
+                </div>
+                <div class="todoButtons">
+                    <button class="addBtn blackBtn">Add</button>
+                    <button class="deleteBtn borderedBtn">Delete all</button>
+                </div>
+            </div>
+            <div class="pomodoro">
+                <div class="timer">
+                    <div class="timerTop">
+                        <p class="repeatTimesCounter">4</p>
+                        <div class="taskType">
+                            <p class="taskText" data-type_id="id" data-type_title="not-set">Work</p>
+                            
+                        </div>
+                        <label for="timerSettingsBtn">
+                            <!-- <img src="" alt="" srcset=""> -->
+                            <input type="checkbox" id="timerSettingsBtn"> 
+                        </label>
+                       
+                    </div>
+                    <p class="timerText">
+                        <span class="minutes">25</span>:<span class="seconds">00</span>
+                    </p>
+                   
+                </div>
+                <div class="timerButtons">
+                    <button class="startBtn blackBtn">Start</button>
+                    <button class="stopBtn borderedBtn">Stop</button>
+                </div>
+                <div class="advancedSettings">
+                    <label for="work">
+                        Таймер работы
+                        <input type="text" class="settingsInput work_inp" data-setting_type="work" id="work">
+                    </label>
+                    <label for="short_b">
+                        Таймер перерыва
+                        <input type="text" class="settingsInput short_b_inp" data-setting_type="short_b" id="short_b">
+                    </label>
+                    <!-- <label for="long_b">
+                        Таймер отдыха
+                        <input type="text" class="settingsInput long_b_inp" data-setting_type="long_b" id="long_b">
+                    </label> -->
+                    <label for="repeat">
+                        Кол-во циклов
+                        <input type="text" class="settingsInput repeat_inp" data-setting_type="repeat" id="repeat">
+                    </label>
+                    <button class="saveSettings blackBtn">Применить настройки</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD TODO MENU__________________________________________ -->
+    <div class="addTodoContainer" style="visibility:hidden;">
+       <div class="editDataContainer" style="width: 0;height: 0;visibility: hidden;"></div>   
+        <div class="addTodoForm">
+        <label for="addTodoInput">
+            <span class="addTodoTitle">Добавить задачу</span>
+             <input type="text" id="addTodoInput" class="addTodoInput" placeholder="">
+        </label>
+        <div class="AddTodoBtnContainer">
+            <button class="confirmTodoEdit blackBtn">Подтвердить</button>
+            <button class="confirmTodo blackBtn">Добавить таск</button>
+            <button class="cancelTodo borderedBtn">Отмена</button>
+        </div>
+        </div>
+    </div>
+    <!-- __________________________________________ -->    
+
+    <!-- CHOOSE TASK TYPE__________________________________________ -->
+    <!-- Visibility задается напрямую, потому что если задавать через класс, то элемент прячеться не сразу при подгрузке html и вылезает косяк -->
+    <div class="taskTypeDialog" style="visibility:hidden;"> 
+        <!-- showSideTaskMenu -->
+            <div class="addTasktypeContainer">
+                <input type="text" class="addTasktypeInput" placeholder="Добавить новую категорию">
+            
+                <button class="addTaskTypeBtn blackBtn">добавить категорию</button>
+            </div>   
+            <p style="text-align: center; padding: 10px; margin-top:30px;">Категории задач</p>
+            <ul class="taskTypeList">
+                
+            </ul>
+           <button class="taskTypeMenuClose borderedBtn">Назад</button>
+    </div>
+     <!-- __________________________________________ -->   
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
