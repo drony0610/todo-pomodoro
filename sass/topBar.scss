@@ -1,0 +1,35 @@
+.topBar {
+    background: rgba($color: #fff, $alpha: 0.5);
+    border-bottom:1px solid #E1E1E1 ;
+    height: 80px;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+    backdrop-filter: blur(40px);
+    z-index: 1000;
+}
+.topBar div{
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.logoLink {
+}
+.logo {
+}
+.userLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.username {
+   
+}
+.account {
+    margin-left: 10px;
+}

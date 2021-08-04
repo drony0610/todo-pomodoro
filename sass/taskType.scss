@@ -1,0 +1,132 @@
+.taskTypeDialog {
+    // display: none !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background: white;
+    z-index: 10000;
+    box-shadow: 10px 0 30px rgba($color: #000000, $alpha: 0);
+    transform: translateX(102%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    transition: transform 0.3s;
+    
+}
+.taskTypeHidden{
+    transform: translateX(0);
+}
+.taskTypeMenuClose{
+    margin-bottom: auto;
+    padding: 10px 30px;
+    align-self: flex-start;
+}
+.addTasktypeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+.addTasktypeInput {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    background: whitesmoke;
+    
+}
+.addTaskTypeBtn {
+    max-width: 300px;
+    width: 100%;
+}
+.taskTypeList{
+    list-style: none;
+    width: 100%;
+    max-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 300px;
+}
+.taskTypeList::-webkit-scrollbar{
+    width: 2px;
+}
+.taskTypeList::-webkit-scrollbar-thumb {
+    background:linear-gradient(92deg, #FF8762 1.94%, #FF6666 100%) ;
+}
+.taskTypeList li{
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    background:linear-gradient(92deg, #FF8762 1.94%, #FF6666 100%);
+    color: white;
+    transition: 0.3s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+}
+.taskTypeList li span{
+    position: absolute;
+    right: 10px;
+    top:50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    width: 0;
+    height: 30px;
+    transition: 0.3s;
+    z-index: 30;
+    background: url('/img/delete.svg') center/70% no-repeat;
+}
+.taskTypeList li:hover{
+    box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.1);
+    transform: translateY(-5px);
+    color: white;
+    padding-right: 40px;
+    text-overflow: clip;
+    white-space: normal;
+}
+.taskTypeList li:hover span{
+    width: 30px;
+    
+    text-align: right;
+}
+.showSideTaskMenu{
+    transform: translateX(0);
+    box-shadow: -5px 0 30px rgba($color: #000000, $alpha: 0.3);
+}
+.colorsForTypes{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.colorsForTypes div{
+    flex-grow: 1;
+    flex-basis: 50px;
+}
+@media(max-width:800px){
+    .taskTypeDialog  {
+        width: 100%;
+        box-shadow: none;
+    }
+    .taskTypeList li{
+        overflow: unset;
+       white-space:normal ;
+        padding-left: 40px;
+        padding-right: 40px;
+        word-wrap: break-word;
+    }
+    .taskTypeList li span{
+        width: 30px;
+        height: 30px;
+    }
+}
