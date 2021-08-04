@@ -1,5 +1,6 @@
 import { hideMenu } from "./addtodo_component"
 
+// Создание объекта для хранения в базе
 const taskType = (data) => { 
     return {
         id: data.id,
@@ -8,7 +9,7 @@ const taskType = (data) => {
         color: data.color || "#c9c9c9",
     }
 }
-
+// Рендер типов для таймера помодоро
 const renderTypes = (data) =>{
    return(
     `<li class="typeItem" data-id="${data.id}" style = "
@@ -18,7 +19,7 @@ const renderTypes = (data) =>{
     <span class="deleteTypeBtn"></span></li>`
    )
 }
-
+// Функция открывает и закрывает боковое меню
 const openMenuTaskType = () =>{
    const menu =  document.querySelector('.taskTypeDialog')
    if(menu.classList.contains('taskTypeHidden')){
@@ -27,7 +28,7 @@ const openMenuTaskType = () =>{
     menu.classList.add('taskTypeHidden')
    }
 }
-
+// Получаем из хранилища айтемы и заливаем их внутрь контейнера с рендером html кода
 const setTaskTypesFromStorage = ()=>{
     if(localStorage.getItem('types') === null ) {
         const arr = []
@@ -39,6 +40,7 @@ const setTaskTypesFromStorage = ()=>{
    
 }
 
+// Добавляем в сторадж
 const addTaskTypeToStorage = (callback = null) =>{
     // если инпут не пуст то собираем объект и пушим его в сторадж
    if(document.querySelector('.addTasktypeInput').value != ''){
@@ -68,6 +70,7 @@ const addTaskTypeToStorage = (callback = null) =>{
 
 }
 
+//Генератор цветов для фона при создании элемента
 const colorGenerator = () => {
     const basicColors = [
         "#E8D06D",
@@ -89,6 +92,8 @@ const colorGenerator = () => {
     return basicColors[randomColorId]
 }
 
+
+// Удаление типа работы для помодоро
 const deleteType = (target) =>{
     if(target.classList.contains('deleteTypeBtn')){
         // забираем id у родителя из датасета и удаляыем по нему элемент
@@ -104,7 +109,7 @@ const deleteType = (target) =>{
         setTaskTypesFromStorage()
     }
 }
-
+// Обработчик выбранного элемента для проброса в объект в базе и измененеия текста внутри помодоро таймера
 const selectTypeHandler = (callback) =>{
     document.querySelector('.taskTypeList').addEventListener('click',(event)=>{
         if(event.target.classList.contains('typeItem')){
